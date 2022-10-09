@@ -99,5 +99,10 @@ export const mediaCards: Array<CardData> = [
         name: 'Higurashi - When They Cry',
         rank: 19,
         imageUrl: 'assets/images/Higurashi.png'
+    },
+    {
+        name: '428: Shibuya Scramble',
+        rank: 20,
+        imageUrl: 'assets/images/428.png'
     }
 ]
