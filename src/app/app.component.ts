@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CardData, mediaCards } from './cards.model';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'ranker';
+  cards: Array<CardData>;
+  constructor() {
+    this.cards = mediaCards.sort((a, b) => a.rank - b.rank);
+  }
 }

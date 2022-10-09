@@ -1,0 +1,55 @@
+.card {
+    --rank-color: #282828;
+    height: 24em;
+    width: 18em;
+    margin: 0.5em;
+    padding: 1em;
+    padding-bottom: 0;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0.5em 0.25em var(--rank-color);
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    &.first {
+        --rank-color: goldenrod;
+    }
+    &.second {
+        --rank-color: silver;
+    }
+    &.third {
+        --rank-color: peru;
+    }
+
+    .image-content {
+        background-color: #44444488;
+        border-radius: 3px;
+        margin: 4px;
+        padding: 2px;
+        img {
+            max-height: 20em;
+            width: 15em;
+            margin: 5px;
+        }
+    }
+    .text-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 0.5em;
+        gap: 8px;
+        .rank {
+            background-color: var(--rank-color);
+            padding: 8px;
+            border: white;
+            border-radius: 1px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        .name {
+            font-size: 20px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    }
+}

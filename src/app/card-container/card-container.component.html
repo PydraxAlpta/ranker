@@ -1,0 +1,9 @@
+<div class="container">
+    <h1 class="card-container-header">{{header | titlecase}}</h1>
+    <div class="card-container">
+        <ng-container *ngFor="let card of cards">
+            <app-card [rank]="card.rank" [name]="card.name" [imageUrl]="card.imageUrl">
+            </app-card>
+        </ng-container>
+    </div>
+</div>
