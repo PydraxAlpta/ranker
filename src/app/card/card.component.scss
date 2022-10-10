@@ -1,14 +1,15 @@
 .card {
-    --rank-color: #282828;
-    height: 24em;
-    width: 18em;
+    --rank-color: #080808cc;
+    height: 25em;
+    width: 20em;
     margin: 0.5em;
     padding: 1em;
     padding-bottom: 0;
     border-radius: 10px;
     box-shadow: 3px 3px 0.5em 0.25em var(--rank-color);
+    border: 2px solid var(--rank-color);
     text-align: center;
-    background-color: black;
+    background-color: #111111ee;
     color: aliceblue;
     display: flex;
     flex-direction: column;
@@ -22,6 +23,15 @@
     &.third {
         --rank-color: peru;
     }
+    &.dragging {
+        &:active {
+            border: 2px solid greenyellow;
+            opacity: 60%;
+        }
+        &:not(:active) {
+            border: 2px solid orchid;
+        }
+    }
 
     .image-content {
         background-color: #44444488;
@@ -29,6 +39,7 @@
         margin: 4px;
         padding: 2px;
         img {
+            border-radius: 4px;
             max-height: 20em;
             width: 15em;
             margin: 5px;
@@ -36,15 +47,17 @@
     }
     .text-content {
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-around;
         align-items: center;
         margin-bottom: 0.5em;
         gap: 8px;
         .rank {
             background-color: var(--rank-color);
-            padding: 8px;
+        }
+        .rank, .tier {
+            padding: 6px;
             border: white;
-            border-radius: 1px;
+            border-radius: 4px;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
         .name {

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -8,5 +8,22 @@ import { Component, Input } from '@angular/core';
 export class CardComponent {
   @Input() name?: string;
   @Input() imageUrl?: string;
+  @Input() index: number = -1;
   @Input() rank?: number;
+  @Input() dragging = false;
+
+  get tier(): string {
+    switch (this.rank) {
+      case 1:
+        return 'S';
+      case 2:
+        return 'A+';
+      case 3:
+        return 'A';
+      case 4:
+        return 'B+';
+      default:
+        return '-';
+    }
+  }
 }

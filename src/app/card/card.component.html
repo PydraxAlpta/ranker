@@ -1,14 +1,21 @@
-<div [ngClass]="{
-    card: true,
-    first: rank === 1,
-    second: rank === 2,
-    third: rank === 3
-}">
+<div
+    draggable="true"
+    dropzone="move"
+    aria-dropeffect="move"
+    [ngClass]="{
+        card: true,
+        first: index === 0,
+        second: index === 1,
+        third: index === 2,
+        dragging
+    }"
+    >
     <div class="image-content">
-        <img [title]="name" [src]="imageUrl" [alt]="name"/>
+        <img draggable="false" [title]="name" [src]="imageUrl" [alt]="name" />
     </div>
     <div class="text-content">
-        <span class="rank">{{rank}}</span>
+        <span class="rank">{{index + 1}}</span>
         <span class="name">{{name}}</span>
+        <span class="tier">{{tier}}</span>
     </div>
 </div>
