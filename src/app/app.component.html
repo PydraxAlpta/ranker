@@ -1,3 +1,9 @@
 <div class="app-root">
-  <app-card-container header="Pyras Top Media" [cards]="cards"></app-card-container>
+  <nav class="app-nav">
+    <ul>
+      <li class="app-link others"><a routerLink="media" routerLinkActive="active">Top Media</a></li>
+      <li class="app-link others"><a routerLink="characters" routerLinkActive="active">Top Characters</a></li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
 </div>
