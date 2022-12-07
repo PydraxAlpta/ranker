@@ -1,20 +1,12 @@
 <div class="container">
     <h1 class="card-container-header">{{header | titlecase}}</h1>
-    <div class="card-container" (dragenter)="currentTarget = -1">
+    <div class="card-container">
         <ng-container *ngFor="let card of cards; let idx=index; trackBy: trackFn">
             <app-card
                 [name]="card.name"
                 [imageUrl]="card.imageUrl"
                 [index]="idx"
                 [rank]="card.rank"
-                [dragging]="dragging"
-                draggable="true"
-                dropzone="move"
-                aria-dropeffect="move"
-                (dragstart)="dragging = true"
-                (dragenter)="$event.preventDefault();"
-                (dragover)="$event.preventDefault(); currentTarget = idx"
-                (dragend)="onDragEnd(idx)"
             ></app-card>
         </ng-container>
     </div>

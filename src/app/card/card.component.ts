@@ -10,7 +10,6 @@ export class CardComponent {
   @Input() imageUrl?: string;
   @Input() index: number = -1;
   @Input() rank?: number;
-  @Input() dragging = false;
 
   get tier(): string {
     switch (this.rank) {

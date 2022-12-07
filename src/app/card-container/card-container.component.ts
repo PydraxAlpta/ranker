@@ -10,16 +10,7 @@ export class CardContainerComponent {
   @Input() header: string = 'Top List';
   @Input() cards: Array<CardData> = [];
 
-  currentTarget: number = -1;
-  dragging = false;
-  
-  onDragEnd(heldIndex: number): void {
-    this.dragging = false;
-    if (this.currentTarget > -1) {
-      swap(this.cards, this.currentTarget, heldIndex);
-    }
-  }
-
+  // NgForTrackBy
   trackFn(_index: number, card: CardData) {
     return card.name;
   }
